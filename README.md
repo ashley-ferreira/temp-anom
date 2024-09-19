@@ -64,7 +64,7 @@ sq
 ### Training
 To run training you need to launch the following job under your DRAC `account_name`
 ```
-sbatch --time=72:00:00 --cpus-per-task=6 --account=account_name --mem=100G --gres=gpu:1 mim_train.sh
+sbatch --time=72:00:00 --cpus-per-task=6 --account=account_name --mem=100G --gres=gpu:1 scripts/to_run/mim_train.sh
 ```
 During training, several types of figures will be created to track the progress. 
 
@@ -77,7 +77,7 @@ Additionally, some of the masked image modelling results will be plotted through
 To run the additional analysis needed for the comparison of model performance versus training labels on the downstream classification task, you need to run a script that trains these models and then runs the comparison 
 
 ```
-sbatch --time=03:00:00 --cpus-per-task=6 --account=account_name --mem=100G --gres=gpu:1 cls_train_samples.sh
+sbatch --time=03:00:00 --cpus-per-task=6 --account=account_name --mem=100G --gres=gpu:1 scripts/to_run/cls_train_samples.sh
 ```
 Once complete, this will output a figure like [this one](./figures/).
 
